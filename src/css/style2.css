@@ -1,0 +1,72 @@
+#home {
+
+    font-family: sans-serif;
+    background-image: url(../images/bg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.temp {
+    text-align: center;
+    margin-top: 70px;
+    font-size: xx-large;
+}
+
+nav ul {
+    width: 345.4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 36px;
+    line-height: 36px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+nav ul li {
+    float: left;
+    border-right: 1px solid white;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 28px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul .active a {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.capDetails>h2 {
+    padding-left: 3%;
+}
+
+#capt {
+    font-size: large;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.block {
+    padding: 10px;
+}
+
+#textInput {
+    font-size: large;
+    padding: 10px;
+}
+
+#btnCaptcha {
+    padding: 10px 0;
+    width: 20%;
+    border-radius: 4%;
+}

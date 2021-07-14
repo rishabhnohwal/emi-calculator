@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI-Calculator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1 style="text-align:center; margin-left:200px">
+                EMI
+            </h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li class="active"><a href="captcha.html">EMI Calculator</a></li>
+        </ul>
+    </nav>
+
+    <div class="emi-holder">
+        <div class="calculator card">
+            <h1>EMI CALCULATOR</h1>
+            <hr>
+            <form action="" id="updating">
+                <div class="block">
+                    <h3>Loan Amount (₹)</h3>
+                    <input type="number" name="amount" id="amount" value="900000" oninput="giveRes()">
+                    <input type="range" min="0" max="10000000" step="1000" value="900000" id="amtRange" class="slider"
+                        oninput="giveResSlider()">
+                </div>
+                <div class="block">
+                    <h3>Loan tenure(Years)</h3>
+                    <input type="number" name="tenure" id="tenure" value="5" max="30" oninput="giveRes()">
+                    <input type="range" min="0" max="30" value="5" id="tenureRange" class="slider"
+                        oninput="giveResSlider()">
+                </div>
+                <div class="block">
+                    <h3>Loan Interest</h3>
+                    <input type="number" name="interest" id="interest" value="6" max="20" oninput="giveRes()">
+                    <input type="range" min="0" max="20" value="6" id="intRange" class="slider"
+                        oninput="giveResSlider()">
+                </div>
+                <div class="button">
+                    <button class="btn" id="reset">
+                        RESET
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="results card">
+            <h1>EMI INFORMATION</h1>
+            <hr>
+            <h3>Monthly EMI: ₹<span class="emi"></span></h3>
+            <h3>Total Interest: ₹<span class="totalInt"></span></h3>
+            <h3>Total Payable Amount: ₹<span class="totalAmt"></span></h3>
+            <hr>
+
+            <div id="chartContainer" style="height: 300px; width: 100%;">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/calculate.js"></script>
+
+
+</body>
+
+</html>

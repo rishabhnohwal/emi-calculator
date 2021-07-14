@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha</title>
+    <link rel="stylesheet" href="./css/style2.css">
+
+    <style>
+        body {
+            background-image: url(./images/captcha.jpg);
+            background-size: cover;
+
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CAPTCHA</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="captcha.html">EMI Calculator</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-row capDetails">
+        <h2>Enter Captcha</h2>
+        <div class="block">
+            <input type="text" readonly id="capt" value="" style="border: none;">
+        </div>
+        <div class="block">
+            <input type="text" id="textInput">
+        </div>
+        <div class="block">
+            <button id="btnCaptcha" onclick="validCap()">
+                CONFIRM CAPTCHA
+            </button>
+        </div>
+    </div>
+
+    <script>
+
+        function cap() {
+            var alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'e', 'S', 'X', 'Y', 'Z', 'a', 'f', 'h', 'o', 'r', 's', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            var a = alpha[Math.floor(Math.random() * alpha.length)];
+            var b = alpha[Math.floor(Math.random() * alpha.length)];
+            var c = alpha[Math.floor(Math.random() * alpha.length)];
+            var d = alpha[Math.floor(Math.random() * alpha.length)];
+            var e = alpha[Math.floor(Math.random() * alpha.length)];
+            var f = alpha[Math.floor(Math.random() * alpha.length)];
+
+            var final = a + b + c + d + e + f;
+            document.getElementById("capt").value = final;
+        }
+        cap();
+
+        function validCap() {
+            var stg1 = document.getElementById("capt").value;
+            var stg2 = document.getElementById("textInput").value;
+
+            if (stg1 == stg2) {
+                document.location.href = "calulator.html";
+                return true;
+            }
+            else {
+                alert("Enter Correct captcha");
+                cap();
+                document.getElementById("textInput").value = "";
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
